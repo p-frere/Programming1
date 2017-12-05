@@ -1,0 +1,5 @@
+
+public class Tricycle extends Cycle {
+	
+	//is a child of Cycle which is a child of RoadhVehicle which is a child of Transport
+}

@@ -1,0 +1,6 @@
+
+public class Train extends Transport{
+	//I think trains are electric there is therefore no fuel
+	
+	//is a child of Transport
+}

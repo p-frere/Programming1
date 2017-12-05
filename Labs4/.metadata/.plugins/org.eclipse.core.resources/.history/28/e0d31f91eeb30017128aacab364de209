@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class LoopsAndLists {
+
+	public static void main(String[] args) {
+		
+		LoopsAndLists app = new LoopsAndLists();
+		int multiple = app.getInput();
+		
+		for (int i = 1; i <= 20; i++) {
+			System.out.println(multiple * i);
+		}
+
+	}
+	
+	private int getInput() {
+		Scanner sc = new Scanner(System.in);
+		int input = sc.nextInt();
+		sc.close();
+		return input;
+		
+	}
+
+}

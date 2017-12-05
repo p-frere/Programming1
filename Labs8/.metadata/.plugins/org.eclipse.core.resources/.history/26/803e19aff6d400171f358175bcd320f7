@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Demo {
+	
+		public Demo() {
+			
+			//Creates and populates list with animals
+			ArrayList<Animal> animalList = new ArrayList<Animal>();
+			animalList.add(new Wolf("Alan", 4));
+			animalList.add(new Wolf("Sally", 6));
+			animalList.add(new Rabbit("Tracer", 2));
+			animalList.add(new Rabbit("Torb", 8));
+			animalList.add(new Parrot("Mario", 10));
+			animalList.add(new Parrot("Sonic", 10));
+			
+			//creates new objects
+			Wolf wolf = new Wolf("Spock", 2);
+			Parrot parrot = new Parrot("Nigel", 4);
+			Rabbit rabbit = new Rabbit("Shaq", 1);
+			
+			Meat meat = new Meat("Beef");
+			Plant plant = new Plant("Lettace");
+			
+			//feeds the parrot the correct food
+			parrot.eat(meat);		
+			
+			//feeds a parrot meat 6 times
+			try {
+				parrot.eat(meat, 6);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			Wolf wolf2 = new Wolf();
+			System.out.println(wolf2.getName());
+			
+			//prints list before sorting
+			printList(animalList);
+			
+			Collections.sort(animalList);
+			
+			//prints list after sorting
+			printList(animalList);
+		}
+		
+		//A method to cycle through an List printing each item
+		public void printList(ArrayList<Animal> list) {
+			for (Animal animal : list) {
+				System.out.println(animal.getName() + " " + animal.getAge());
+			}
+		}
+		
+		//Main method, calls Demo to run program
+		public static void main (String[] args) {
+			new Demo();	
+		}
+}
+
+
+
+/*
+	What is an interface? 
+	How does it differ from an abstract class? 
+	Write your answer to this as a comment in your Demo class
+
+*/

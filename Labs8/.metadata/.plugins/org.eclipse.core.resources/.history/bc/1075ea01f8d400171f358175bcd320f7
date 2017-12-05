@@ -1,0 +1,73 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Demo {
+	
+		public Demo() {
+			
+			//Creates and populates list with animals
+			ArrayList<Animal> animalList = new ArrayList<Animal>();
+			animalList.add(new Wolf("Alan", 4));
+			animalList.add(new Wolf("Sally", 6));
+			animalList.add(new Rabbit("Tracer", 2));
+			animalList.add(new Rabbit("Torb", 8));
+			animalList.add(new Parrot("Mario", 10));
+			animalList.add(new Parrot("Sonic", 10));
+			
+			//creates new food and feeds it to animal
+			Meat meat = new Meat("Beef");
+			
+			//feeds the parrot the correct food
+			try {
+				animalList.get(0).eat(meat);
+			} catch (Exception e1) {
+				System.err.println("The wrong food has been fed to an animal");
+			}		
+			
+			//feeds a parrot meat 3 times
+			try {
+				animalList.get(0).eat(meat, 3);
+			} catch (Exception e) {
+				System.err.println("The wrong food has been fed to an animal");
+			}
+			
+			//prints list before sorting
+			printList(animalList);
+			
+			Collections.sort(animalList);
+			
+			//prints list after sorting
+			printList(animalList);
+		}
+		
+		//A method to cycle through an List printing each item
+		public void printList(ArrayList<Animal> list) {
+			for (Animal animal : list) {
+				System.out.println(animal.getName() + " " + animal.getAge());
+			}
+		}
+		
+		//Main method, calls Demo to run program
+		public static void main (String[] args) {
+			new Demo();	
+		}
+}
+
+
+/*
+	What is an interface? 
+	
+	A reference type similar to a class
+	A group of related abstract methods that are only method signatures or fields 
+	this could include constants, default methods, static methods, and nested types
+	
+	How does it differ from an abstract class? 
+	
+	Abstract classes can have both abstract and non abstract classes while interfaces are all abstract
+	You can inherit multiple interfaces also but only inherit from one abstract class
+	
+	 How could you make the animals be ordered from highest age to lowest age? 
+	 
+	 
+
+*/
